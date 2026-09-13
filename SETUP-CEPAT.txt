@@ -1,0 +1,7 @@
+1. Supabase SQL Editor -> jalankan supabase.sql
+2. Authentication -> Users -> Add user
+3. Salin UUID -> INSERT ke public.admin
+4. Isi frontend/config.js dengan URL + sb_publishable key
+5. Live Server -> frontend/index.html
+6. Admin -> frontend/admin.html
+7. Tidak ada .env / npm / backend.

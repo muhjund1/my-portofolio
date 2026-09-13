@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Fullstack Developer - Web modern dengan HTML, CSS, JavaScript, Node.js, Express dan PostgreSQL.">
+  <meta name="author" content="Your Name">
+  <meta property="og:title" content="Your Name | Fullstack Developer">
+  <meta property="og:description" content="Portofolio dan proyek Fullstack Developer.">
+  <meta property="og:type" content="website">
+  <title>Muhammad Jundi Al-Aqsha | Fullstack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <div id="page-loader" class="page-loader" aria-label="Memuat halaman"><span class="spinner"></span></div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">&lt;Dev<span>/&gt;</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-bg-orb orb-one"></div>
+      <div class="hero-bg-orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">HELLO, I'M</p>
+          <h1>Muhammad Jundi</h1>
+          <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
+          <p class="hero-description">Saya membangun aplikasi web modern, responsif, dan scalable dari frontend hingga backend.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Lihat Proyek <span>↗</span></a>
+            <a class="btn btn-secondary" href="#contact">Hubungi Saya</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/muhjund1" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammad-jundi-al-aqsha-462029403/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://instagram.com/muh_jund1" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="code-card">
+            <div class="code-top"><span></span><span></span><span></span></div>
+            <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Muhammad Jundi Al-Aqsha"</span>,
+  role: <span class="code-green">"Fullstack Developer"</span>,
+  stack: [
+    <span class="code-green">"JavaScript"</span>,
+    <span class="code-green">"Node.js"</span>,
+    <span class="code-green">"PostgreSQL"</span>
+  ],
+  passion: <span class="code-green">"building"</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-indicator" href="#about">↓ Scroll</a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>Developer yang suka <span>membangun solusi</span>.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="profile-wrap reveal">
+            <div class="profile-photo"><img src="./assets/images/propil.jpeg" alt="Foto profil Your Name"></div>
+            <div class="experience-badge"><strong id="experience-years">2+</strong><span>Tahun<br>Pengalaman</span></div>
+          </div>
+          <div class="about-copy reveal">
+            <p>Saya adalah Fullstack Developer yang fokus membuat produk digital dengan pengalaman pengguna yang baik dan kode yang mudah dirawat.</p>
+            <p>Mulai dari antarmuka interaktif sampai REST API dan database, saya senang mengerjakan sebuah produk secara menyeluruh.</p>
+            <div class="about-stats">
+              <div><strong id="stat-projects">1</strong><span>Proyek Selesai</span></div>
+              <div><strong id="stat-experience">1+</strong><span>Tahun Pengalaman</span></div>
+              <div><strong id="stat-clients">2+</strong><span>Klien Puas</span></div>
+            </div>
+            <a class="btn btn-primary" href="./assets/cv.pdf" download>Download CV ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-heading heading-row reveal">
+          <div><p class="eyebrow">MY WORK</p><h2>Proyek <span>terpilih</span>.</h2></div>
+          <div class="filter-buttons" id="filter-buttons">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="frontend">Frontend</button>
+            <button class="filter-btn" data-category="backend">Backend</button>
+            <button class="filter-btn" data-category="fullstack">Fullstack</button>
+          </div>
+        </div>
+        <div id="projects-loading" class="loading-box"><span class="spinner"></span><p>Memuat proyek...</p></div>
+        <div id="projects-error" class="message-box error hidden">Gagal memuat proyek. Pastikan backend sudah berjalan.</div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">TECH STACK</p><h2>Skills & <span>teknologi</span>.</h2></div>
+        <div class="skills-grid reveal">
+          <div class="skill-item"><div class="skill-label"><span>HTML5</span><b>95%</b></div><div class="progress"><span style="width:95%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>CSS3</span><b>90%</b></div><div class="progress"><span style="width:90%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>JavaScript</span><b>88%</b></div><div class="progress"><span style="width:88%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>Node.js</span><b>82%</b></div><div class="progress"><span style="width:82%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>Express.js</span><b>80%</b></div><div class="progress"><span style="width:80%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>PostgreSQL</span><b>78%</b></div><div class="progress"><span style="width:78%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>Supabase</span><b>78%</b></div><div class="progress"><span style="width:78%"></span></div></div>
+          <div class="skill-item"><div class="skill-label"><span>Git / GitHub</span><b>85%</b></div><div class="progress"><span style="width:85%"></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="section-heading reveal"><p class="eyebrow">GET IN TOUCH</p><h2>Mari buat sesuatu yang <span>keren</span>.</h2><p>Butuh website, API, atau aplikasi fullstack? Kirim pesan dan saya akan menghubungi Anda kembali.</p>
+          <div class="contact-links"><a href="https://github.com/muhjund1" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/muhammad-jundi-al-aqsha-462029403/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://x.com/" target="_blank" rel="noreferrer">X / Twitter ↗</a><a href="https://instagram.com/muhjund1" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row"><label>Nama<input name="name" type="text" required placeholder="Nama Anda"></label><label>Email<input name="email" type="email" required placeholder="email@example.com"></label></div>
+          <label>Subjek<input name="subject" type="text" required placeholder="Tentang apa?"></label>
+          <label>Pesan<textarea name="message" rows="6" required minlength="10" placeholder="Tulis pesan Anda..."></textarea></label>
+          <button class="btn btn-primary" type="submit" id="contact-submit">Kirim Pesan <span>→</span></button>
+          <p id="contact-message" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><p>© <span id="year"></span> Muhammad Jundi</p><a href="#home">Back to top ↑</a></div></footer>
+  <button class="scroll-top" id="scroll-top" aria-label="Kembali ke atas">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <div class="modal hidden" id="project-modal" role="dialog" aria-modal="true" aria-label="Detail proyek">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Tutup">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script src="./js/main.js"></script>
+  <script src="./js/projects.js"></script>
+  <script src="./js/contact.js"></script>
+  <script src="./js/animations.js"></script>
+</body>
+</html>
