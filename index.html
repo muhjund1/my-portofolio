@@ -92,7 +92,19 @@
         </div>
         <div class="about-grid">
           <div class="profile-wrap reveal">
-            <div class="profile-photo"><img src="./assets/images/propil.jpeg" alt="Foto profil Your Name"></div>
+            <div class="profile-gallery" data-profile-gallery>
+              <div class="profile-photo" data-profile-viewport>
+                <img class="is-active" data-profile-slide src="./assets/images/propil.jpeg" alt="Foto profil" draggable="false">
+                <img data-profile-slide src="./assets/images/biar-orang-bisa-mengenal.jpeg" alt="Foto pribadi 2" draggable="false">
+                <img data-profile-slide src="./assets/images/foto-lain.jpeg" alt="Foto pribadi 3" draggable="false">
+                <img data-profile-slide src="./assets/images/sederhana-saja.jpeg" alt="Foto pribadi 4" draggable="false">
+              </div>
+              <div class="profile-gallery-controls" data-profile-controls hidden>
+                <button type="button" data-profile-prev aria-label="Foto sebelumnya">‹</button>
+                <div class="profile-gallery-dots" data-profile-dots aria-label="Pilih foto"></div>
+                <button type="button" data-profile-next aria-label="Foto berikutnya">›</button>
+              </div>
+            </div>
             <div class="experience-badge"><strong id="experience-years">1+</strong><span>Tahun<br>Pengalaman</span></div>
           </div>
           <div class="about-copy reveal">
@@ -122,6 +134,10 @@
           <div class="about-info-item">
             <span class="about-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 8 9-4 9 4-9 4-9-4Z"></path><path d="M7 10v4c3 2 7 2 10 0v-4M21 8v5"></path><circle cx="12" cy="18" r="2.5"></circle><path d="M7.5 21h9"></path></svg></span>
             <div><span class="about-info-label">Status</span><strong class="about-info-status">Student</strong></div>
+          </div>
+          <div class="about-info-item">
+            <span class="about-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"></path><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5A2.5 2.5 0 0 1 20 22V5.5Z"></path><path d="M7 8h2M15 8h2"></path></svg></span>
+            <div><span class="about-info-label">Hafalan Al-Qur'an</span><strong>30 Juz Alhamdulillah</strong></div>
           </div>
         </div>
         <div class="about-skills">
