@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hubungi Muhammad Jundi Al-Aqsha untuk kerja sama website dan aplikasi.">
+  <meta name="author" content="Muhammad Jundi Al-Aqsha">
+  <meta name="robots" content="index, follow">
+  <title>Contact | Muhammad Jundi Al-Aqsha</title>
+  <link rel="canonical" href="https://junanaksholeh.my.id/contact">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-inner">
+      <a class="logo" href="./index.html">&lt;Dev<span>/&gt;</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./project.html">Projects</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="standalone-page">
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h1 class="standalone-title">Mari buat sesuatu yang <span>keren</span>.</h1>
+          <p>Butuh website, API, atau aplikasi fullstack? Kirim pesan dan saya akan menghubungi Anda kembali.</p>
+          <div class="contact-links">
+            <a href="https://github.com/muhjund1" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/muhammad-jundi-al-aqsha-462029403/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://x.com/" target="_blank" rel="noreferrer">X / Twitter ↗</a>
+            <a href="https://instagram.com/muh_jund1" target="_blank" rel="noreferrer">Instagram ↗</a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row">
+            <label>Nama<input name="name" type="text" required placeholder="Nama Anda"></label>
+            <label>Email<input name="email" type="email" required placeholder="email@example.com"></label>
+          </div>
+          <label>Subjek<input name="subject" type="text" required placeholder="Tentang apa?"></label>
+          <label>Pesan<textarea name="message" rows="6" required minlength="10" placeholder="Tulis pesan Anda..."></textarea></label>
+          <button class="btn btn-primary" type="submit" id="contact-submit">Kirim Pesan <span>→</span></button>
+          <p id="contact-message" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><p>© <span id="year"></span> Muhammad Jundi</p><a href="./index.html">Kembali ke beranda ↑</a></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/contact.js"></script>
+  <script src="./js/animations.js"></script>
+</body>
+</html>

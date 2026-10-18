@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeri kegiatan dan sertifikat Muhammad Jundi Al-Aqsha.">
+  <meta name="author" content="Muhammad Jundi Al-Aqsha">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Galeri | Muhammad Jundi Al-Aqsha">
+  <meta property="og:description" content="Dokumentasi kegiatan dan sertifikat Muhammad Jundi Al-Aqsha.">
+  <title>Galeri | Muhammad Jundi Al-Aqsha</title>
+  <link rel="canonical" href="https://junanaksholeh.my.id/gallery">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-inner">
+      <a class="logo" href="./index.html">&lt;Dev<span>/&gt;</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="./index.html#home">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./project.html">Projects</a>
+        <a href="./gallery.html" aria-current="page">Gallery</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="gallery-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-heading gallery-heading">
+          <p class="eyebrow">MOMENTS &amp; ACHIEVEMENTS</p>
+          <h1>Galeri <span>perjalanan</span>.</h1>
+          <p>Kumpulan kegiatan, pengalaman, dan sertifikat yang menjadi bagian dari perjalanan saya.</p>
+        </div>
+
+        <div class="gallery-filters" role="group" aria-label="Filter galeri">
+          <button class="filter-btn active" type="button" data-gallery-filter="all" aria-pressed="true">Semua</button>
+          <button class="filter-btn" type="button" data-gallery-filter="activity" aria-pressed="false">Kegiatan</button>
+          <button class="filter-btn" type="button" data-gallery-filter="certificate" aria-pressed="false">Sertifikat</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+        <div class="gallery-empty" id="gallery-empty" role="status" hidden>
+          <span class="gallery-empty-icon" aria-hidden="true">✦</span>
+          <h2 id="gallery-empty-title">Galeri sedang disiapkan</h2>
+          <p id="gallery-empty-description">Dokumentasi akan ditambahkan di sini. Silakan kembali lagi nanti.</p>
+        </div>
+        <p class="gallery-back"><a class="btn btn-secondary" href="./index.html">← Kembali ke portfolio</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Muhammad Jundi</p>
+      <a href="./index.html#home">Kembali ke portfolio ↑</a>
+    </div>
+  </footer>
+  <script src="./js/gallery.js"></script>
+</body>
+</html>

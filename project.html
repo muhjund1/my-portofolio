@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kumpulan proyek pilihan Muhammad Jundi Al-Aqsha, Fullstack Developer.">
+  <meta name="author" content="Muhammad Jundi Al-Aqsha">
+  <meta name="robots" content="index, follow">
+  <title>Projects | Muhammad Jundi Al-Aqsha</title>
+  <link rel="canonical" href="https://junanaksholeh.my.id/project">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <header class="navbar scrolled">
+    <div class="container nav-inner">
+      <a class="logo" href="./index.html">&lt;Dev<span>/&gt;</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./project.html" aria-current="page">Projects</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="standalone-page">
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-heading heading-row reveal">
+          <div><p class="eyebrow">MY WORK</p><h1 class="standalone-title">Proyek <span>terpilih</span>.</h1><p>Beberapa proyek yang pernah saya kerjakan.</p></div>
+          <div class="filter-buttons" id="filter-buttons" role="group" aria-label="Filter proyek">
+            <button class="filter-btn active" type="button" data-category="all">Semua</button>
+            <button class="filter-btn" type="button" data-category="frontend">Frontend</button>
+            <button class="filter-btn" type="button" data-category="backend">Backend</button>
+            <button class="filter-btn" type="button" data-category="fullstack">Fullstack</button>
+          </div>
+        </div>
+        <div id="projects-loading" class="loading-box"><span class="spinner"></span><p>Memuat proyek...</p></div>
+        <div id="projects-error" class="message-box error hidden">Gagal memuat proyek. Pastikan konfigurasi Supabase sudah benar.</div>
+        <div class="projects-grid" id="projects-grid"></div>
+        <p class="gallery-back"><a class="btn btn-secondary" href="./index.html">← Kembali ke beranda</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><p>© <span id="year"></span> Muhammad Jundi</p><a href="./index.html">Kembali ke beranda ↑</a></div></footer>
+  <div class="modal hidden" id="project-modal" role="dialog" aria-modal="true" aria-label="Detail proyek">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Tutup">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/projects.js"></script>
+  <script src="./js/animations.js"></script>
+</body>
+</html>

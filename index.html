@@ -34,13 +34,14 @@
 
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a class="logo" href="#home">&lt;Dev<span>/&gt;</span></a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <a class="logo" href="./index.html">&lt;Dev<span>/&gt;</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./project.html">Projects</a>
+        <a href="./gallery.html">Gallery</a>
+        <a href="./contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -56,8 +57,8 @@
           <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
           <p class="hero-description">Saya membangun aplikasi web modern, responsif, dan scalable dari frontend hingga backend.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Lihat Proyek <span>↗</span></a>
-            <a class="btn btn-secondary" href="#contact">Hubungi Saya</a>
+            <a class="btn btn-primary" href="./project.html">Lihat Proyek <span>↗</span></a>
+            <a class="btn btn-secondary" href="./contact.html">Hubungi Saya</a>
           </div>
           <div class="hero-socials">
             <a href="https://github.com/muhjund1" target="_blank" rel="noreferrer">GitHub</a>
@@ -95,9 +96,9 @@
             <div class="profile-gallery" data-profile-gallery>
               <div class="profile-photo" data-profile-viewport>
                 <img class="is-active" data-profile-slide src="./assets/images/propil.jpeg" alt="Foto profil" draggable="false">
-                <img data-profile-slide src="./assets/images/biar-orang-bisa-mengenal.jpeg" alt="Foto pribadi 2" draggable="false">
+                <!-- <img data-profile-slide src="./assets/images/biar-orang-bisa-mengenal.jpeg" alt="Foto pribadi 2" draggable="false">
                 <img data-profile-slide src="./assets/images/foto-lain.jpeg" alt="Foto pribadi 3" draggable="false">
-                <img data-profile-slide src="./assets/images/sederhana-saja.jpeg" alt="Foto pribadi 4" draggable="false">
+                <img data-profile-slide src="./assets/images/sederhana-saja.jpeg" alt="Foto pribadi 4" draggable="false"> -->
               </div>
               <div class="profile-gallery-controls" data-profile-controls hidden>
                 <button type="button" data-profile-prev aria-label="Foto sebelumnya">‹</button>
@@ -173,6 +174,30 @@
       </div>
     </section>
 
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-heading heading-row reveal">
+          <div class="gallery-heading">
+            <p class="eyebrow">MOMENTS &amp; ACHIEVEMENTS</p>
+            <h2>Kegiatan &amp; <span>sertifikat</span>.</h2>
+            <p>Cuplikan dari perjalanan dan pencapaian saya.</p>
+          </div>
+          <div class="gallery-filters" role="group" aria-label="Filter galeri">
+            <button class="filter-btn active" type="button" data-gallery-filter="all" aria-pressed="true">Semua</button>
+            <button class="filter-btn" type="button" data-gallery-filter="activity" aria-pressed="false">Kegiatan</button>
+            <button class="filter-btn" type="button" data-gallery-filter="certificate" aria-pressed="false">Sertifikat</button>
+          </div>
+        </div>
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+        <div class="gallery-empty" id="gallery-empty" role="status" hidden>
+          <span class="gallery-empty-icon" aria-hidden="true">✦</span>
+          <h2 id="gallery-empty-title">Galeri sedang disiapkan</h2>
+          <p id="gallery-empty-description">Dokumentasi akan ditambahkan di sini. Silakan kembali lagi nanti.</p>
+        </div>
+        <p class="gallery-back"><a class="btn btn-secondary" href="./gallery.html">Lihat semua galeri ↗</a></p>
+      </div>
+    </section>
+
     <section class="section section-alt" id="contact">
       <div class="container contact-grid">
         <div class="section-heading reveal"><p class="eyebrow">GET IN TOUCH</p><h2>Mari buat sesuatu yang <span>keren</span>.</h2><p>Butuh website, API, atau aplikasi fullstack? Kirim pesan dan saya akan menghubungi Anda kembali.</p>
@@ -205,6 +230,7 @@
 <script src="./js/main.js"></script>
   <script src="./js/projects.js"></script>
   <script src="./js/contact.js"></script>
+  <script src="./js/gallery.js"></script>
   <script src="./js/animations.js"></script>
 </body>
 </html>

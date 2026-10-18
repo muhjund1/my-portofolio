@@ -4,6 +4,10 @@ Versi ini dibuat supaya deployment Vercel sederhana: **`index.html` berada di RO
 
 ## Struktur
 - `index.html` — halaman public
+- `about.html` — profil, pendidikan, dan skills
+- `project.html` — daftar proyek
+- `contact.html` — formulir kontak
+- `gallery.html` — galeri kegiatan dan sertifikat
 - `admin.html` — dashboard admin, tidak ditautkan dari public
 - `config.js` — URL Supabase + Publishable Key
 - `css/`, `js/`, `assets/` — file frontend
@@ -39,6 +43,15 @@ Setelah deploy:
 - Admin: `https://domain-kamu.vercel.app/admin`
 
 Tidak ada tombol Admin di public.
+
+## Galeri kegiatan dan sertifikat
+Pratinjau galeri ditampilkan di beranda. Halaman galeri lengkap dapat dibuka
+dari menu **Galeri** atau `gallery.html`. Untuk menampilkan dokumentasi, simpan
+file di `assets/gallery/` lalu tambahkan
+judul, tipe (`activity` atau `certificate`), dan path file pada array
+`galleryItems` di `js/gallery.js`. Sertifikat juga dapat menggunakan tautan
+PDF pada properti `link`. Galeri menampilkan pesan kosong sampai datanya
+ditambahkan.
 
 ## Penting
 `sb_publishable_...` boleh berada di frontend. Jangan pernah menaruh `sb_secret_...` atau service-role key di `config.js` atau repository.
