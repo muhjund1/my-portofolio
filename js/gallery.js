@@ -6,7 +6,16 @@ const galleryItems = [
     date: "26 September 2026",
     image: "./assets/gallery/sertifikat-mhq-10-juz.png",
     link: "./assets/gallery/sertifikat-mhq-10-juz.png"
+  },
+  {
+    type: "activity",
+    title: "Lomba IQT FAIR UMS",
+    description: "Dokumentasi kegiatan lomba IQT FAIR UMS.",
+    date: "26 September 2026",
+    image: "./assets/gallery/kegiatan-lomba-iqt-fair-ums.JPG",
+    link: "./assets/gallery/kegiatan-lomba-iqt-fair-ums.JPG"
   }
+
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
