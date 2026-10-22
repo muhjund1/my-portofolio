@@ -8,6 +8,21 @@ const galleryItems = [
     link: "./assets/gallery/sertifikat-mhq-10-juz.png"
   },
   {
+    type: "certificate",
+    title: "Sertifikat Karantina Bahasa Arab yang diadakan oleh PPQITA Al Mahir",
+    description: "Karantina bahasa arab yang menunjang pembelajaran bahasa Arab Kita dipondok.",
+    image: "./assets/gallery/sertif-karantina-b-arab.jpg",
+    link: "./assets/gallery/sertif-karantina-b-arab.jpg"
+  },
+  {
+    type: "certificate",
+    title: "Sertifikat Lomba Nahwu dan Sharaf yang diselenggarakan oleh santri pedia",
+    description: "Lomba Nahwu dan Sharaf yang diselenggarakan oleh santri pedia.",
+    date: "26 September 2026",
+    image: "./assets/gallery/sertif-lomba-nahwu=sharaf.jpg",
+    link: "./assets/gallery/sertif-lomba-nahwu=sharaf.jpg"
+  },
+  {
     type: "activity",
     title: "Lomba IQT FAIR UMS",
     description: "Dokumentasi kegiatan lomba IQT FAIR UMS.",
