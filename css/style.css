@@ -22,3 +22,235 @@ a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}button{c
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes blink{50%{opacity:0}}@keyframes cardIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
 .gallery-page{min-height:calc(100vh - 74px);padding-top:72px}.gallery-heading{max-width:780px}.gallery-heading h1{font:700 clamp(36px,6vw,58px)/1.2 Poppins;letter-spacing:-1.5px}.gallery-heading h1 span{background:var(--gradient);-webkit-background-clip:text;color:transparent}.gallery-filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}.gallery-filters .filter-btn{font-size:13px;padding:10px 16px}.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.gallery-card{overflow:hidden;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);animation:cardIn .4s both}.gallery-image{display:grid;width:100%;height:230px;object-fit:cover;background:#171b2c}.gallery-image-empty{place-items:center;color:#8d86ff;font-size:36px;background:linear-gradient(145deg,#171b2c,#0f1220)}.gallery-card-body{padding:20px}.gallery-card-body h2{font:700 19px Poppins;margin:6px 0}.gallery-date{color:#8d86ff;font-size:12px}.gallery-description{color:var(--muted);font-size:13px;margin-top:8px}.gallery-card-link{display:inline-block;color:#b8b2ff;font-size:12px;font-weight:800;margin-top:14px}.gallery-card-link:hover{color:#fff}.gallery-empty{max-width:600px;margin:50px auto;text-align:center;padding:40px 24px;border:1px dashed rgba(255,255,255,.16);border-radius:var(--radius);background:rgba(255,255,255,.02)}.gallery-empty[hidden]{display:none}.gallery-empty-icon{font-size:34px;color:#8d86ff}.gallery-empty h2{font:700 22px Poppins;margin:12px 0 6px}.gallery-empty p{color:var(--muted);font-size:14px}.gallery-back{margin-top:38px}
 .standalone-page{min-height:calc(100vh - 74px);padding-top:72px}.standalone-title{font:700 clamp(36px,6vw,58px)/1.2 Poppins;letter-spacing:-1.5px}.standalone-title span{background:var(--gradient);-webkit-background-clip:text;color:transparent}
+
+
+/* ========================================
+   WELCOME POPUP
+   ======================================== */
+
+.welcome-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  background: rgba(5, 5, 15, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.welcome-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.welcome-popup__card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  padding: 42px 32px 30px;
+
+  overflow: hidden;
+  text-align: center;
+  color: #f8fafc;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(124, 58, 237, 0.22),
+      transparent 45%
+    ),
+    #11111f;
+
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(124, 58, 237, 0.12);
+
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s ease;
+}
+
+.welcome-popup.is-visible .welcome-popup__card {
+  transform: translateY(0) scale(1);
+}
+
+.welcome-popup__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.welcome-popup__close:hover {
+  color: #fff;
+  background: rgba(124, 58, 237, 0.45);
+  transform: rotate(90deg);
+}
+
+.welcome-popup__icon {
+  display: grid;
+  place-items: center;
+
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  border: 1px solid rgba(196, 181, 253, 0.5);
+  border-radius: 22px;
+
+  font-family: monospace;
+  font-size: 25px;
+  font-weight: 800;
+
+  box-shadow: 0 10px 35px rgba(124, 58, 237, 0.3);
+}
+
+.welcome-popup__eyebrow {
+  margin: 0 0 10px;
+  color: #a78bfa;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.welcome-popup__card h2 {
+  margin: 0 0 16px;
+  color: #fff;
+
+  font-size: clamp(32px, 6vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.welcome-popup__description {
+  max-width: 350px;
+  margin: 0 auto 28px;
+
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.welcome-popup__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  border: 0;
+  border-radius: 12px;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.welcome-popup__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+}
+
+.welcome-popup__button:focus-visible,
+.welcome-popup__close:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+.welcome-popup__button span {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.welcome-popup__button:hover span {
+  transform: translateX(4px);
+}
+
+.welcome-popup__footer {
+  margin: 22px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Tampilan HP */
+@media (max-width: 480px) {
+  .welcome-popup {
+    padding: 16px;
+  }
+
+  .welcome-popup__card {
+    padding: 38px 22px 26px;
+    border-radius: 20px;
+  }
+
+  .welcome-popup__icon {
+    width: 66px;
+    height: 66px;
+    margin-bottom: 18px;
+  }
+
+  .welcome-popup__description {
+    font-size: 14px;
+  }
+}
+
+/* Hormati pengaturan pengurangan animasi */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-popup,
+  .welcome-popup__card,
+  .welcome-popup__close,
+  .welcome-popup__button,
+  .welcome-popup__button span {
+    transition: none;
+  }
+}

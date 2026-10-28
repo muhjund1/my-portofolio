@@ -225,6 +225,67 @@
       <div id="modal-body"></div>
     </div>
   </div>
+
+  
+<!-- Welcome Popup -->
+<div
+  id="welcomePopup"
+  class="welcome-popup"
+  aria-hidden="true"
+>
+  <div
+    class="welcome-popup__card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcomeTitle"
+    aria-describedby="welcomeDescription"
+  >
+    <button
+      type="button"
+      class="welcome-popup__close"
+      id="welcomeClose"
+      aria-label="Tutup popup"
+    >
+      &times;
+    </button>
+
+    <div class="welcome-popup__icon" aria-hidden="true">
+      &lt;/&gt;
+    </div>
+
+    <p class="welcome-popup__eyebrow">
+      PERSONAL PORTFOLIO
+    </p>
+
+    <h2 id="welcomeTitle">
+      Welcome!
+    </h2>
+
+    <p
+      id="welcomeDescription"
+      class="welcome-popup__description"
+    >
+      Selamat datang di website portofolio saya.
+      Temukan profil, keahlian, dan berbagai proyek
+      yang telah saya kerjakan.
+    </p>
+
+    <button
+      type="button"
+      class="welcome-popup__button"
+      id="welcomeExplore"
+    >
+      Jelajahi Portofolio
+      <span aria-hidden="true">&rarr;</span>
+    </button>
+
+    <p class="welcome-popup__footer">
+      Thanks for visiting my portfolio.
+    </p>
+  </div>
+</div>
+<!-- End Welcome Popup -->
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./config.js"></script>
 <script src="./js/main.js"></script>

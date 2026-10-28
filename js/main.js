@@ -61,3 +61,72 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(activeIndex);
   });
 });
+
+
+/* ========================================
+   WELCOME POPUP
+   Muncul setiap kali halaman dibuka/refresh
+   ======================================== */
+
+(() => {
+  const popup = document.getElementById("welcomePopup");
+  const closeButton = document.getElementById("welcomeClose");
+  const exploreButton = document.getElementById("welcomeExplore");
+
+  // Berhenti jika elemen popup tidak ditemukan.
+  if (!popup || !closeButton || !exploreButton) return;
+
+  function openPopup() {
+    popup.classList.add("is-visible");
+    popup.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePopup() {
+    popup.classList.remove("is-visible");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Tampilkan popup setiap halaman dimuat.
+  window.setTimeout(openPopup, 300);
+
+  // Tombol tutup (X).
+  closeButton.addEventListener("click", closePopup);
+
+  // Tutup saat mengeklik area gelap di luar popup.
+  popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+      closePopup();
+    }
+  });
+
+  // Tutup menggunakan tombol Escape.
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      popup.classList.contains("is-visible")
+    ) {
+      closePopup();
+    }
+  });
+
+  // Tombol Jelajahi Portofolio.
+  exploreButton.addEventListener("click", () => {
+    closePopup();
+
+    const aboutSection = document.querySelector("#about");
+
+    if (aboutSection) {
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  });
+})();
