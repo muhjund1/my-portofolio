@@ -1,12 +1,134 @@
-@media(max-width:1024px){.hero-grid{gap:40px}.about-grid,.contact-grid{gap:45px}.projects-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:1024px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:768px){.container{width:min(100% - 28px,var(--container))}.section{padding:85px 0}.menu-toggle{display:block;margin-left:auto}.nav-menu{position:absolute;top:72px;left:14px;right:14px;display:none;flex-direction:column;gap:0;background:#111522;border:1px solid var(--border);border-radius:14px;padding:8px}.nav-menu.open{display:flex}.nav-menu a{padding:12px}.nav-admin{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:110px}.hero-visual{order:-1;max-width:600px}.hero h1{letter-spacing:-2px}.code-card{transform:none}.heading-row{align-items:start;flex-direction:column}.about-grid{gap:50px}.profile-wrap{margin:auto;width:min(100%,360px)}.about-info-grid{grid-template-columns:1fr;margin-top:45px}.skills-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}.skill-item{width:auto;min-width:0;flex:0 1 auto;justify-content:initial;padding:11px 10px;gap:6px}.skill-label{min-width:0;gap:5px;font-size:12px}.skill-label span{overflow:hidden;text-overflow:ellipsis}.skill-label b{font-size:10px}.progress{flex:0 0 32px;width:32px}.contact-links{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}.experience-badge{right:-5px}.footer-inner{gap:15px;flex-direction:column}}
-@media(max-width:768px){.gallery-grid{grid-template-columns:1fr}}
-@media(max-width:640px){.hero-actions .btn{width:100%}.hero-socials{gap:13px;flex-wrap:wrap}.section-heading h2{font-size:31px}.about-stats{grid-template-columns:1fr}.contact-links{grid-template-columns:1fr}.contact-form{padding:20px}.code-card pre{font-size:11px;padding:20px}.nav-inner{height:64px}}
-@media(max-width:380px){.skill-item{padding:12px 14px}.progress{flex-basis:48px;width:48px}}
-@media(max-width:768px){
-  .nav-menu{display:flex;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px) scale(.96);transform-origin:top right;transition:opacity .2s ease,transform .2s cubic-bezier(.2,.8,.2,1),visibility 0s linear .2s}
-  .nav-menu.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1);transition-delay:0s}
+.nav-icon{display:none}
+
+@media(max-width:1024px){
+  .hero-grid{gap:40px}
+  .about-grid,.contact-grid{gap:45px}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:640px){.nav-menu{top:64px}}
-@media(max-width:768px) and (prefers-reduced-motion:reduce){.nav-menu,.nav-menu.open{transition:none;transform:none}}
+
+@media(max-width:768px){
+  .container{width:min(100% - 28px,var(--container))}
+  .section{padding:85px 0}
+  .navbar{
+    top:auto;
+    bottom:calc(12px + env(safe-area-inset-bottom));
+    left:50%;
+    width:min(calc(100% - 24px),520px);
+    transform:translateX(-50%);
+    padding:4px 8px;
+    background:rgba(18,20,27,.96);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    box-shadow:0 12px 36px rgba(0,0,0,.32);
+    backdrop-filter:blur(20px);
+  }
+  .navbar.scrolled{background:rgba(18,20,27,.96)}
+  .nav-inner{width:100%;height:62px}
+  .logo,.menu-toggle{display:none}
+  .nav-menu{
+    display:flex;
+    align-items:stretch;
+    justify-content:space-between;
+    width:100%;
+    gap:2px;
+    margin:0;
+  }
+  .theme-toggle{
+    flex:0 0 42px;
+    width:42px;
+    min-height:54px;
+    padding:6px;
+    border:0;
+    border-radius:14px;
+  }
+  .theme-toggle-label{display:none}
+  .theme-icon{width:19px;height:19px}
+  .nav-menu a{
+    display:flex;
+    flex:1 1 0;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    min-width:0;
+    min-height:54px;
+    padding:6px 2px;
+    border-radius:14px;
+    color:#a5a9b5;
+    font-size:10px;
+    line-height:1.1;
+    white-space:nowrap;
+  }
+  .nav-icon{
+    display:block;
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .nav-menu a:hover{color:#fff}
+  .nav-menu a[aria-current="page"]{
+    color:#fff;
+    background:#5425ed;
+    box-shadow:0 6px 16px rgba(79,35,237,.28);
+  }
+  main{padding-bottom:24px}
+  .footer{padding-bottom:calc(30px + 82px + env(safe-area-inset-bottom))}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .hero-visual{order:-1;max-width:600px}
+  .hero h1{letter-spacing:-2px}
+  .code-card{transform:none}
+  .heading-row{align-items:start;flex-direction:column}
+  .about-grid{gap:50px}
+  .profile-wrap{margin:auto;width:min(100%,360px)}
+  .about-info-grid{grid-template-columns:1fr;margin-top:45px}
+  .skills-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+  .skill-item{width:auto;min-width:0;flex:0 1 auto;justify-content:initial;padding:11px 10px;gap:6px}
+  .skill-label{min-width:0;gap:5px;font-size:12px}
+  .skill-label span{overflow:hidden;text-overflow:ellipsis}
+  .skill-label b{font-size:10px}
+  .progress{flex:0 0 32px;width:32px}
+  .contact-links{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .experience-badge{right:-5px}
+  .footer-inner{gap:15px;flex-direction:column}
+}
+
+@media(max-width:640px){
+  .hero-actions .btn{width:100%}
+  .hero-socials{gap:13px;flex-wrap:wrap}
+  .section-heading h2{font-size:31px}
+  .about-stats{grid-template-columns:1fr}
+  .contact-links{grid-template-columns:1fr}
+  .contact-form{padding:20px}
+  .code-card pre{font-size:11px;padding:20px}
+  .nav-inner{height:60px}
+}
+
+@media(max-width:380px){
+  .skill-item{padding:12px 14px}
+  .progress{flex-basis:48px;width:48px}
+  .nav-menu a{font-size:9px}
+  .nav-icon{width:18px;height:18px}
+}
+
+@media(max-width:768px){
+  html[data-theme="light"] .navbar,
+  html[data-theme="light"] .navbar.scrolled{background:rgba(255,255,255,.96)}
+  html[data-theme="light"] .nav-menu a{color:#626b7e}
+  html[data-theme="light"] .nav-menu a:hover{color:#3322a3}
+  .nav-menu a[aria-current="page"]{color:#fff;background:#5425ed}
+  html[data-theme="light"] .nav-menu a[aria-current="page"]{color:#fff}
+  html[data-theme="light"] .theme-toggle{color:#626b7e}
+}
+
+@media(max-width:768px) and (prefers-reduced-motion:reduce){
+  .navbar,.nav-menu a{transition:none}
+}
