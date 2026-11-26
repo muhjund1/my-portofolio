@@ -12,3 +12,60 @@ drop policy if exists projects_admin_delete on public.projects; create policy pr
 drop policy if exists messages_public_insert on public.messages; create policy messages_public_insert on public.messages for insert to anon,authenticated with check(true);
 drop policy if exists messages_admin_read on public.messages; create policy messages_admin_read on public.messages for select to authenticated using(exists(select 1 from public.admin where user_id=auth.uid() and role='admin'));
 grant select on public.messages to authenticated;
+alter table public.messages add column if not exists status text not null default 'pending' check(status in('pending','confirmed','cancelled'));
+alter table public.messages add column if not exists reply text;
+alter table public.messages add column if not exists replied_at timestamptz;
+drop policy if exists messages_public_insert on public.messages;
+create policy messages_public_insert on public.messages for insert to anon,authenticated with check(status='pending' and reply is null and replied_at is null);
+drop policy if exists messages_admin_update on public.messages;
+create policy messages_admin_update on public.messages for update to authenticated using(exists(select 1 from public.admin where user_id=auth.uid() and role='admin')) with check(exists(select 1 from public.admin where user_id=auth.uid() and role='admin'));
+grant update on public.messages to authenticated;
+
+create table if not exists public.portfolio_visits (
+  id smallint primary key default 1 check (id = 1),
+  total bigint not null default 0 check (total >= 0)
+);
+
+insert into public.portfolio_visits (id)
+values (1)
+on conflict (id) do nothing;
+
+alter table public.portfolio_visits enable row level security;
+revoke all on table public.portfolio_visits from anon, authenticated;
+
+create or replace function public.increment_portfolio_visits()
+returns bigint
+language sql
+security definer
+set search_path = ''
+as $$
+  insert into public.portfolio_visits as visits (id, total)
+  values (1, 1)
+  on conflict (id)
+  do update set total = visits.total + 1
+  returning total;
+$$;
+
+revoke all on function public.increment_portfolio_visits() from public;
+grant execute on function public.increment_portfolio_visits() to anon, authenticated;
+
+create or replace function public.get_portfolio_visits()
+returns bigint
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select total
+  from public.portfolio_visits
+  where id = 1
+    and exists (
+      select 1
+      from public.admin
+      where user_id = auth.uid()
+        and role = 'admin'
+    );
+$$;
+
+revoke all on function public.get_portfolio_visits() from public;
+grant execute on function public.get_portfolio_visits() to authenticated;

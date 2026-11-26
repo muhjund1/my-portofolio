@@ -44,6 +44,18 @@ Setelah deploy:
 
 Tidak ada tombol Admin di public.
 
+## Status pesan dan balasan email
+Dashboard admin menampilkan status **Pending**, **Terkonfirmasi**, dan **Dibatalkan**. Untuk mengirim balasan, tulis jawaban pada pesan lalu klik **Konfirmasi & kirim email**. Email dikirim ke alamat yang dicantumkan pengirim melalui Resend, dan status menjadi terkonfirmasi setelah email berhasil dikirim.
+
+1. Verifikasi domain pengirim di Resend.
+2. Deploy fungsi Supabase dari root repository menggunakan Supabase CLI:
+   `supabase functions deploy send-message-reply`
+3. Simpan secret di project Supabase (jangan di `config.js`):
+   `supabase secrets set RESEND_API_KEY=re_... MAIL_FROM="Muhammad Jundi <balasan@domain-terverifikasi.com>"`
+4. Jalankan ulang `supabase.sql` di SQL Editor Supabase agar kolom status dan kebijakan admin tersedia.
+
+Untuk tindakan **Pending** dan **Batalkan**, dashboard memperbarui status tanpa mengirim email. Jika pengiriman gagal, status tidak akan ditandai terkonfirmasi.
+
 ## Galeri kegiatan dan sertifikat
 Pratinjau galeri ditampilkan di beranda. Halaman galeri lengkap dapat dibuka
 dari menu **Galeri** atau `gallery.html`. Untuk menampilkan dokumentasi, simpan

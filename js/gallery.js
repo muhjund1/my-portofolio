@@ -1,5 +1,53 @@
 const galleryItems = [
   {
+    type: "activity",
+    title: "Juara 1 — Kalibrasi UNS 2026",
+    description: "Foto pribadi Muhammad Jundi Al-Aqsha setelah meraih juara 1 pada Kalibrasi UNS 2026.",
+    date: "7 November 2026",
+    image: "./assets/gallery/foto-personal-sebagai-juara-1-uns-kalibrasi.JPG",
+    link: "./assets/gallery/foto-personal-sebagai-juara-1-uns-kalibrasi.JPG"
+  },
+  {
+    type: "activity",
+    title: "Juara 2 — Lomba IQT FAIR UMS",
+    description: "Foto kegiatan dan penerimaan penghargaan sebagai juara 2 pada lomba IQT FAIR UMS.",
+    date: "26 September 2026",
+    image: "./assets/gallery/foto-juara-2-lomba-iqt.JPG",
+    link: "./assets/gallery/foto-juara-2-lomba-iqt.JPG"
+  },
+  {
+    type: "certificate",
+    title: "Semifinalis MHQ 10 Juz — HQF UNHAS",
+    description: "Sertifikat penghargaan atas partisipasi sebagai semifinalis cabang lomba Musabaqah Hifzhil Qur'an 10 Juz pada HQF 2026 Universitas Hasanuddin.",
+    date: "2026",
+    image: "./assets/gallery/Muhammad Jundi Al-Aqsha-unhas.png",
+    link: "./assets/gallery/Muhammad Jundi Al-Aqsha-unhas.png"
+  },
+  {
+    type: "certificate",
+    title: "Peserta Lomba MHQ 5 Juz — Universitas Negeri Surabaya",
+    description: "Sertifikat lomba MHQ 5 Juz dalam kegiatan Gebyar Musabaqah Tilawatil Qur'an Tingkat SMA/Sederajat dan Mahasiswa.",
+    date: "13 November 2026",
+    image: "./assets/gallery/lomba-mhq-unesa.png",
+    link: "./assets/gallery/lomba-mhq-unesa.png"
+  },
+  {
+    type: "activity",
+    title: "Kegiatan Kalibrasi 2026 — UNS",
+    description: "Dokumentasi kegiatan Kalibrasi 2026 bertema \"Aksara Karsa Cahaya\" di Universitas Sebelas Maret.",
+    date: "7 November 2026",
+    image: "./assets/gallery/lomba-kalibrasi-uns-mhq.JPG",
+    link: "./assets/gallery/lomba-kalibrasi-uns-mhq.JPG"
+  },
+  {
+    type: "certificate",
+    title: "Juara 1 Cabang Lomba Musabaqah Hifzhil Qur'an — Kalibrasi UNS 2026",
+    description: "Sertifikat juara 1 cabang lomba Musabaqah Hifzhil Qur'an dalam acara Kalibrasi UNS 2026.",
+    date: "7 November 2026",
+    image: "./assets/gallery/sertifikat-lomba-kalibrasi-uns-juara-1.jpeg",
+    link: "./assets/gallery/sertifikat-lomba-kalibrasi-uns-juara-1.jpeg"
+  },
+  {
     type: "certificate",
     title: "Juara 2 MHQ 10 Juz — IQT FAIR XII",
     description: "Juara 2 MHQ Nasional 10 Juz yang diselenggarakan HMP IQT UMS.",

@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle=document.getElementById("menu-toggle"), nav=document.getElementById("nav-menu");
   const links=nav?.querySelectorAll("a");
 
+  if(window.supabaseClient){
+    window.supabaseClient.rpc("increment_portfolio_visits").then(({error})=>{
+      if(error)throw error;
+    }).catch((error)=>{
+      console.error("Gagal mencatat kunjungan:",error);
+    });
+  }else{
+    console.error("Kunjungan tidak dapat dicatat karena Supabase belum dikonfigurasi.");
+  }
+
   toggle?.addEventListener("click",()=>{
     const isOpen=nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded",String(isOpen));
